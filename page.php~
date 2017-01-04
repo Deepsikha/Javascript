@@ -1,0 +1,6 @@
+<php
+$name = $_REQUEST['Name'];
+$email = $_REQUEST['Email'];
+$zip = $_REQUEST['Zip'];
+echo($name. "<br/>".$email. "<br/>".$zip. "<br/>");
+?>
