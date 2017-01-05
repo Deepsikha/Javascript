@@ -1,0 +1,17 @@
+input[type=text] {
+    width: auto;
+    //padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+td {
+    //color: #00ffff;
+    text-align: center;
+
+}
+.left{
+    text-align: left;
+    width: auto;
+    margin: 8px 0;
+
+}
