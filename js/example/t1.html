@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript">
+       // http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
+    </script>
+    <style type="text/css">
+        .div1 {
+
+            width: 250px;
+            height: 100px;
+            margin-left: 20px;
+            margin-top: 10px;
+            //border-style: groove;
+            //border-width: 2px;
+            //border-color: black;
+            position: relative;
+        }
+
+        .div2 {
+
+            width: 250px;
+            height: 100px;
+            margin-top: 10px;
+            margin-left: 20px;
+            //border-style: groove;
+            //border-width: 2px;
+            //border-color: black;
+            position: relative;
+        }
+
+        .listbox {
+            width: 600px;
+            height: 400px;
+            margin-top: 20px;
+            margin-left: 20px;
+            //border-style: groove;
+            //border-width: 2px;
+            //border-color: black;
+            position: relative;
+        }
+
+        .listbox1 {
+            width: 40%;
+            height: 360px;
+            margin-top: 20px;
+            margin-left: 20px;
+            //border-style: groove;
+            //border-width: 2px;
+            //border-color: black;
+        }
+
+        .chkbox {
+            width: 60%;
+            height: 324px;
+            margin-top: 20px;
+            margin-left: 5px;
+            //border-style: groove;
+            //border-width: 2px;
+            //border-color: black;
+        }
+
+        .btns {
+            width: 20%;
+            height: 90%;
+            margin-top: 20px;
+            margin-left: 5px;
+            //border-style: groove;
+            //border-width: 2px;
+            //border-color: black;
+        }
+
+        .main {
+            width: 50%;
+            height: 100%;
+            //border-style: groove;
+            //border-width: 1px;
+            //border-color: black;
+            float: left;
+        }
+
+        .disp {
+            width: 48%;
+            height: 655px;
+            //border-style: groove;
+            //border-width: 1px;
+            //border-color: black;
+            float: right;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main">
+    <div class="div1">
+        <p>Zip Code:</p>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <div>
+        <div id="country_code" class="div2">
+            <p>Country Code:</p>
+            <input type="text" id="country_code_txt">
+        </div>
+    </div>
+    <div class="listbox">
+        <div class="listbox1" style="float: left;">
+            <center>
+                <form>
+                    <div id="attributes" class="chkbox" style="float: left;">
+
+                    </div>
+                </form>
+            </center>
+            <div class="btns" style="float: right; margin-right: 10px;">
+                <center>
+                    <button onclick="shiftright();" style="font-size: 12pt;margin-top: 40px">&gt;</button>
+                    <br><br><br>
+                    <button onclick="shiftleft();" style="font-size: 12pt">&lt;</button>
+                    <br><br><br>
+                    <button onclick="shiftallright();" style="font-size: 12pt">&gt;&gt;</button>
+                    <br><br><br>
+                    <button onclick="shiftallleft();" style="font-size: 12pt">&lt;&lt;</button>
+                    <br><br><br>
+                </center>
+            </div>
+        </div>
+        <center>
+        <div class="listbox1" id="selected_att" style=" float: right;margin-right: 20px;">
+            <form>
+                <div class="chkbox" id="selected_att1" style="height: 280px;">
+
+                </div>
+                <br>
+            </form>
+        </div>
+        </center>
+    </div>
+</div>
+
+<div class="disp" id="disp1">
+</div>
+<script>
+    var fun;
+    $.get('/home/lcom48/WebstormProjects/javascript/zip.csv', function(data) {
+        var bt = '<select id = "zip_code_selector" onchange="change()">\n<option value="-1" disabled selected>Select zip code</option>\n';
+        var row = data.split("\n");
+        row.shift();
+        row.forEach(function getvalues(thisrow) {
+            var attribute = thisrow.split(",");
+            build += "<option value = " + att[1] + ">" + att[0] + "</option>\n";
+        })
+        build += "</select>\n";
+        $('#zip').append(build);
+    });
+    function shiftright(){
+
+    };
+
+    function shiftleft(){
+
+    };
+
+    function shiftallright(){
+
+    };
+
+    function shiftallleft(){
+
+    };
+
+</script>
+
+
+</body>
+</html>
